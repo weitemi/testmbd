@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "fcu_f3new.h": "c",
+        "can_message.h": "c",
+        "fcu_f3new_types.h": "c"
+    }
+}
