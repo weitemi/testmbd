@@ -9,6 +9,10 @@
 #define DATA_HAND_H_
 
 
+uint8_t VCU_Ready_State;//VCU Ready状态
+
+uint8_t Soc_Data;//SOC值
+
 
 //排气时间，排气间隔
 extern uint8_t Out_Time;

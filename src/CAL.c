@@ -10,13 +10,10 @@
 #include "dmaController1.h"
 #include "pin_mux.h"
 #include "SYS.h"
-#include "CAN.h"
-#include "CAN1.h"
+#include "can.h"
 #include "LPIT.h"
 #include "ADC.h"
 #include "REL.h"
-#include "CAN_TX.h"
-#include "CAN_RX.h"
 #include "Data_Hand.h"
 #include "Cpu.h"
 #include "clockMan1.h"
@@ -24,26 +21,20 @@
 #include "pin_mux.h"
 #include "SYS.h"
 #include "CAN.h"
-#include "CAN1.h"
 #include "LPIT.h"
 #include "ADC.h"
 #include "REL.h"
-#include "CAN_TX.h"
-#include "CAN_RX.h"
 #include "Data_Hand.h"
-#include"EXTERNAL_EEPROM.h"
+#include "EXTERNAL_EEPROM.h"
 #include "Cpu.h"
 #include "clockMan1.h"
 #include "dmaController1.h"
 #include "pin_mux.h"
 #include "SYS.h"
 #include "CAN.h"
-#include "CAN1.h"
 #include "LPIT.h"
 #include "ADC.h"
 #include "REL.h"
-#include "CAN_TX.h"
-#include "CAN_RX.h"
 #include "Data_Hand.h"
 #include "CAL.h"
 #include "Fault.h"
@@ -75,8 +66,8 @@ void CAL_Read_Data(void)
 		  if(Flag_10ms)
 		  {
 			Flag_10ms=0;
-			CAN0_Receive_COM();
-			REN_CAN_Send(ID_Relay_State,CAN0_TX_MAILBOX3,REL_State1,REL_State2,REL_State3,0,0,0,0,CAL_Flag); //发送继电器状态 0x18F10201
+//			CAN0_Receive_COM();
+			//REN_CAN_Send(ID_Relay_State,CAN0_TX_MAILBOX3,REL_State1,REL_State2,REL_State3,0,0,0,0,CAL_Flag); //发送继电器状态 0x18F10201
 			CAL_Flag = 0;//发送完之后就清零防止老是弹框
 		  }
 		}
@@ -126,8 +117,8 @@ void CAL_Read_Data(void)
 			}
 		}
 	}
-	S_JYF_Data[0] |= CAL_Data[30];
-	S_JYF_Data[1] = CAL_Data[31];
+//	S_JYF_Data[0] |= CAL_Data[30];
+//	S_JYF_Data[1] = CAL_Data[31];
 	S_RUN_Count_Data = CAL_Data[28]*256+CAL_Data[29];// 读取运行次数
 }
 

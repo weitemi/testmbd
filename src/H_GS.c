@@ -11,7 +11,6 @@
 #include "pin_mux.h"
 #include "SYS.h"
 #include "CAN.h"
-#include "CAN1.h"
 #include "LPIT.h"
 #include "ADC.h"
 #include "REL.h"

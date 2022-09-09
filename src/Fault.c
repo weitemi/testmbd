@@ -11,13 +11,10 @@
 #include "pin_mux.h"
 #include "SYS.h"
 #include "CAN.h"
-#include "CAN1.h"
 #include "LPIT.h"
 #include "ADC.h"
 #include "REL.h"
 #include "CAN_TX.h"
-#include "CAN1_TX.h"
-#include "CAN_RX.h"
 #include "Data_Hand.h"
 #include"EXTERNAL_EEPROM.h"
 #include "CAL.h"
@@ -131,26 +128,26 @@ void send_fualt(void)
 	{
 	   case 0:
 		 if(GZ[0]>0)
-		 REN_CAN_Send(ID_GU1,CAN0_TX_MAILBOX2,gu_data2[0],gu_data2[1],gu_data2[2],gu_data2[3],
-			     gu_data2[4],gu_data2[5],gu_data2[6],gu_data2[7]);
+//		 REN_CAN_Send(ID_GU1,CAN0_TX_MAILBOX2,gu_data2[0],gu_data2[1],gu_data2[2],gu_data2[3],
+//			     gu_data2[4],gu_data2[5],gu_data2[6],gu_data2[7]);
 		 t=1;
 	   break;
 	   case 1:
 		 if(GZ[1]>0)
-		 REN_CAN_Send(ID_GU2,CAN0_TX_MAILBOX2,gu_data3[0],gu_data3[1],gu_data3[2],gu_data3[3],
-				 gu_data3[4],gu_data3[5],gu_data3[6],gu_data3[7]);
+//		 REN_CAN_Send(ID_GU2,CAN0_TX_MAILBOX2,gu_data3[0],gu_data3[1],gu_data3[2],gu_data3[3],
+//				 gu_data3[4],gu_data3[5],gu_data3[6],gu_data3[7]);
 		 t=2;
 	   break;
 	   case 2:
 		 if(GZ[2]>0)
-		 REN_CAN_Send(ID_GU3,CAN0_TX_MAILBOX2,gu_data4[0],gu_data4[1],gu_data4[2],gu_data4[3],
-				 gu_data4[4],gu_data4[5],gu_data4[6],gu_data4[7]);
+//		 REN_CAN_Send(ID_GU3,CAN0_TX_MAILBOX2,gu_data4[0],gu_data4[1],gu_data4[2],gu_data4[3],
+//				 gu_data4[4],gu_data4[5],gu_data4[6],gu_data4[7]);
 		 t=3;
 	   break;
 	   case 3:
 		 if(GZ[3]>0)
-		 REN_CAN_Send(ID_GU4,CAN0_TX_MAILBOX2,gu_data5[0],gu_data5[1],gu_data5[2],gu_data5[3],
-				 gu_data5[4],gu_data5[5],gu_data5[6],gu_data5[7]);
+//		 REN_CAN_Send(ID_GU4,CAN0_TX_MAILBOX2,gu_data5[0],gu_data5[1],gu_data5[2],gu_data5[3],
+//				 gu_data5[4],gu_data5[5],gu_data5[6],gu_data5[7]);
 		 t=0;
 	   break;
 	}

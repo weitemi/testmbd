@@ -12,6 +12,7 @@
 #include "LPIT.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "FCU_F3NEW.h"
 
 uint8_t Flag_5ms=0;
 uint8_t Flag_1ms=0;
@@ -49,11 +50,7 @@ void LPIT_ISR(void)
 		Single_100ms = 0;
 	}
 }
-void LPIT2_ISR(void)
-{
-	LPIT_DRV_ClearInterruptFlagTimerChannels(INST_LPIT1, (1 << LPIT_CHANNEL2));
-	Flag_100us = 1;
-}
+
 void LPIT_Ini(void)
 {
 	INT_SYS_InstallHandler(LPIT0_Ch0_IRQn,&LPIT_ISR,(isr_t *)0);
@@ -61,7 +58,7 @@ void LPIT_Ini(void)
     LPIT_DRV_InitChannel(INST_LPIT1, LPIT_CHANNEL, &lpit1_ChnConfig0);
     LPIT_DRV_StartTimerChannels(INST_LPIT1,1<<0);
 
-    INT_SYS_InstallHandler(LPIT0_Ch2_IRQn,&LPIT2_ISR,(isr_t *)0);
+    INT_SYS_InstallHandler(LPIT0_Ch2_IRQn,&ISR_PIT_CH3,(isr_t *)0);
 	LPIT_DRV_InitChannel(INST_LPIT1, LPIT_CHANNEL2, &lpit1_ChnConfig2);
 	LPIT_DRV_StartTimerChannels(INST_LPIT1,1<<2);
 }

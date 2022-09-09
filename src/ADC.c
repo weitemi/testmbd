@@ -12,7 +12,6 @@
 #include "CAN.h"
 #include "LPIT.h"
 #include "ADC.h"
-#include "CAN_RX.h"
 #include "Temp.h"
 #include "REL.h"
 #include "CAL.h"
